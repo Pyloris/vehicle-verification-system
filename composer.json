@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "sirJuni\\Framework\\" : "vendor/shoaib/sir-juni/src/"
+        }
+    },
+
+    "require": {
+        "shoaib/sir-juni" : "dev-master"
+    }
+
+}
