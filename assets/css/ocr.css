@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.camera-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 700px;
+    height: 150px;
+    border: 2px dashed #fff;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+#capture-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 48%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feather {
+    width: 24px;
+    height: 24px;
+}
+
+.feather-camera {
+    stroke: #000000;
+}

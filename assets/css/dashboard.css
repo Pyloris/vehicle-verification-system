@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.sidebar {
+    width: 13%;
+    height: 100%;
+
+    background-color: #3C3C3C;
+}
+
+.sidebar nav {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0.5rem;
+}
+
+.sidebar nav a {
+    padding: 0.5rem 0.7rem;
+    width: 100%;
+
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+
+    margin-left: 20px;
+}
+
+.sidebar nav a:hover {
+    transform: scale(1.1);
+}
+
+.sidebar nav ul {
+    padding: 10px;
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 0.7rem;
+    width: 100%;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 20px;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.main {
+    width: 87%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+
+    /* background-color: red; */
+}
+
+
+.main .stats {
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.main .stats .stats-card {
+    width: 20%;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #95A5A6;
+
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px gray;
+}
+
+.main .stats .stats-card .title .about-text {
+    float: right;
+    font-size: 26px;
+}
+
+.main .stats .stats-card .title i {
+    font-size: 45px;
+    color: white;
+}
+
+.main .stats .stats-card #total_verifications {
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main .stats .stats-card .about_stat {
+    color: white;
+    font-size: 15px;
+    text-align: end;
+}
+
+.chart {
+    padding-top: 1rem;
+    /* overflow: scroll; */
+    height: 80%;
+    width: 100%;
+}

@@ -6,7 +6,8 @@
     },
 
     "require": {
-        "shoaib/sir-juni" : "dev-master"
+        "shoaib/sir-juni" : "dev-master",
+        "guzzlehttp/guzzle": "^7.0"
     }
 
 }

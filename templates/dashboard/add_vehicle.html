@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/form.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <title>Add Vehicle</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <div class="hero"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/dashboard"><span class="icon"><i class="fa-solid fa-chart-simple"></i></span> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/vehicle_list"><span class="icon"><i class="fa-solid fa-list"></i></span>Vehicle List</a>
+                    </li>
+                    <li>
+                        <a href="/add_vehicles"><span class="icon"><i class="fa-solid fa-car"></i></span>Add Vehicles</a>
+                    </li>
+                </ul>
+
+                <a href="/logout"><span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>Logout</a>
+            </nav>
+        </div>
+
+        <div class="main">
+           
+            <div class="form-container">
+                <div class="form-title">ADD VEHICLE</div>
+                <div class="form-single">
+                    <form action="/add_vehicle" method="POST">
+                        <input type="text" name="vehicle_number" placeholder="Vehicle Number">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <div class="file-upload-title">ADD A CSV FILE OF VEHICLE NUMBERS</div>
+                <div class="form-file">
+                    <form action="/add_vehicle" method="POST">
+                        <input type="file" name="vehicle_list" accept="text/csv">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/23ec01dfad.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>

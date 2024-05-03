@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="sidebar">
+
+            <div class="hero"></div>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/dashboard"><span class="icon"><i class="fa-solid fa-chart-simple"></i></span> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/vehicle_list"><span class="icon"><i class="fa-solid fa-list"></i></span>Vehicle List</a>
+                    </li>
+                    <li>
+                        <a href="/add_vehicles"><span class="icon"><i class="fa-solid fa-car"></i></span>Add Vehicles</a>
+                    </li>
+                </ul>
+
+                <a href="/logout"><span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>Logout</a>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="stats">
+
+                <div class="stats-card">
+                    <div class="title"><i class="fa-solid fa-arrow-up-9-1"></i><span class="about-text">TODAY</span></div>
+                    <div id="total_verifications">23</div>
+                    <div class="about_stat">Total Cars Verified Today</div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="title"><i class="fa-solid fa-car-side"></i><span class="about-text">CARS</span></div>
+                    <div id="total_verifications">120</div>
+                    <div class="about_stat">Total Cars Registered</div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="title"><i class="fa-solid fa-clock"></i><span class="about-text">MONTH</span></div>
+                    <div id="total_verifications">23</div>
+                    <div class="about_stat">Total Cars Verified in current Month</div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="title"><i class="fa-solid fa-calendar-days"></i><span class="about-text">YEAR</span></div>
+                    <div id="total_verifications">23</div>
+                    <div class="about_stat">Total Cars Verified this Year</div>
+                </div>
+            </div>
+
+            <div class="chart">
+                <div>
+                <canvas id="myChart" width="400" height="170"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'No of Verifications this YEAR',
+    data: [120, 320, 200, 160, 80, 22, 150, 199],
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+    tension: 0.1
+  }]
+};
+
+  var chart = new Chart(ctx, {
+  type: 'line',
+  data: data,
+});
+</script>
+   
+
+    <script src="https://kit.fontawesome.com/23ec01dfad.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-title, .file-upload-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-single {
+  padding: 20px;
+}
+
+.form-single form input {
+  appearance: none;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid blue;
+}
+
+.form-single form input:focus {  
+  outline: none;
+  border: none;
+  border-bottom: 1px solid green;
+}
+
+button {
+  padding: 6px 14px;
+
+  background-color: #95A5A6;
+
+  border: none;
+
+  cursor: pointer;
+}
