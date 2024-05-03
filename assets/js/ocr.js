@@ -1,31 +1,3 @@
-// const video = document.getElementById('video');
-// const canvas = document.getElementById('canvas');
-// const overlay = document.querySelector('.overlay');
-// const captureBtn = document.getElementById('capture-btn');
-
-// navigator.mediaDevices.getUserMedia({ video: true })
-//     .then(stream => {
-//         video.srcObject = stream;
-//         video.play();
-//     })
-//     .catch(err => {
-//         console.error('Error accessing the camera: ', err);
-//     });
-
-// captureBtn.addEventListener('click', () => {
-//     const context = canvas.getContext('2d');
-//     const overlayRect = overlay.getBoundingClientRect();
-    
-//     canvas.width = overlayRect.width;
-//     canvas.height = overlayRect.height;
-    
-//     context.drawImage(video, overlayRect.left, overlayRect.top, overlayRect.width, overlayRect.height, 0, 0, canvas.width, canvas.height);
-    
-//     const imageData = canvas.toDataURL('image/png');
-//     console.log('Captured image:', imageData);
-// });
-
-
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const overlay = document.querySelector('.overlay');
@@ -64,22 +36,25 @@ function capturePhoto() {
     context.drawImage(video, overlayRect.left, overlayRect.top, overlayRect.width, overlayRect.height, 0, 0, canvas.width, canvas.height);
     
     const imageData = canvas.toDataURL('image/png');
+
+    let org = document.getElementById("org").value;
+    console.log(org);
     console.log('Captured image:', imageData);
     
-    // Example of sending imageData as multipart form data
-    /* 
     const formData = new FormData();
-    formData.append('photo', imageData);
-    fetch('your-upload-url', {
+    formData.append('org', org);
+    formData.append('image', imageData);
+    fetch('/ocr', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Upload response:', data);
+    .then(response => {
+        if (response.status == 200) {
+            alert("ALLOWED");
+        }
+        else {
+            alert("NOT ALLOWED");
+        }
     })
-    .catch(error => {
-        console.error('Upload error:', error);
-    });
-    */
+    .catch(err => console.log(err));
 }

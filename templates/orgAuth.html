@@ -15,11 +15,11 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
+      <p style="width: 100%; text-align: center; color: red; padding: 20px"><?= $message; ?></p>
       <form action="/login" method="POST">
         <input type="text" name="email" placeholder="Enter your email">
         <input type="password" name="password" placeholder="Enter your password">
-        <a href="/forgot-password">Forgot password?</a>
-        <input type="button" class="button" value="Login">
+        <input type="submit" class="button" value="Login">
       </form>
 
       <div class="signup">
@@ -30,12 +30,13 @@
     </div>
     <div class="registration form">
       <header>Signup</header>
+      <p style="width: 100%; text-align: center; color: red; padding: 20px"><?= $message; ?></p>
       <form action="/signup" method="POST">
         <input type="text" name="domain" placeholder="Enter Website URL">
         <input type="text" name="email" placeholder="Enter your email">
         <input type="password" name="password" placeholder="Create a password">
         <input type="password" name="cpassword" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+        <input type="submit" class="button" value="Signup">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?

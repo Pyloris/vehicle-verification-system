@@ -24,6 +24,12 @@
   padding: 20px;
 }
 
+.form-single form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .form-single form input {
   appearance: none;
   padding: 5px;

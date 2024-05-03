@@ -12,7 +12,7 @@
 
         <div class="sidebar">
 
-            <div class="hero"></div>
+            <div class="hero"><?= $user_id; ?></div>
 
             <nav>
                 <ul>
@@ -36,25 +36,25 @@
 
                 <div class="stats-card">
                     <div class="title"><i class="fa-solid fa-arrow-up-9-1"></i><span class="about-text">TODAY</span></div>
-                    <div id="total_verifications">23</div>
+                    <div id="total_verifications"><?= $stat['scans_today']; ?></div>
                     <div class="about_stat">Total Cars Verified Today</div>
                 </div>
 
                 <div class="stats-card">
                     <div class="title"><i class="fa-solid fa-car-side"></i><span class="about-text">CARS</span></div>
-                    <div id="total_verifications">120</div>
+                    <div id="total_verifications"><?= $stat['total_cars']; ?></div>
                     <div class="about_stat">Total Cars Registered</div>
                 </div>
 
                 <div class="stats-card">
                     <div class="title"><i class="fa-solid fa-clock"></i><span class="about-text">MONTH</span></div>
-                    <div id="total_verifications">23</div>
+                    <div id="total_verifications"><?= $stat['scans_this_month']; ?></div>
                     <div class="about_stat">Total Cars Verified in current Month</div>
                 </div>
 
                 <div class="stats-card">
                     <div class="title"><i class="fa-solid fa-calendar-days"></i><span class="about-text">YEAR</span></div>
-                    <div id="total_verifications">23</div>
+                    <div id="total_verifications"><?= $stat['scans_this_year']; ?></div>
                     <div class="about_stat">Total Cars Verified this Year</div>
                 </div>
             </div>

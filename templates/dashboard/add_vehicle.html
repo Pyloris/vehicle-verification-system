@@ -35,17 +35,18 @@
             <div class="form-container">
                 <div class="form-title">ADD VEHICLE</div>
                 <div class="form-single">
-                    <form action="/add_vehicle" method="POST">
+                    <form action="/add_vehicles" method="POST">
                         <input type="text" name="vehicle_number" placeholder="Vehicle Number">
-                        <button type="submit">Submit</button>
+                        <input type="text" name="owner" placeholder="Owner Name">
+                        <button type="submit" name="single" value="submit">Submit</button>
                     </form>
                 </div>
 
                 <div class="file-upload-title">ADD A CSV FILE OF VEHICLE NUMBERS</div>
                 <div class="form-file">
-                    <form action="/add_vehicle" method="POST">
-                        <input type="file" name="vehicle_list" accept="text/csv">
-                        <button type="submit">Submit</button>
+                    <form action="/add_vehicles" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="csvFile" accept="text/csv">
+                        <button type="submit" name="file" value="submit">Submit</button>
                     </form>
                 </div>
             </div>

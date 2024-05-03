@@ -18,8 +18,12 @@ class Verifier {
     function verifyImage($request) {
 
         if ($request->method() == "POST") {
+            $dataUri = $request->formData("image");
+            // $binaryData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $dataUri));
+            $binaryData = base64_decode((explode(",",$dataUri))[1]);
 
             $client = new Client();
+
             $headers = [
             'X-RapidAPI-Key' => X_RAPID_KEY,
             'X-RapidAPI-Host' => X_RAPID_HOST
@@ -28,7 +32,8 @@ class Verifier {
             'multipart' => [
                 [
                 'name' => 'image',
-                'contents' => Psr7\Utils::tryFopen($request->File("image"), 'r'),
+                // 'contents' => Psr7\Utils::tryFopen($request->File("image"), 'r'),
+                'contents' => $binaryData,
                 'filename' => 'image.jpeg',
                 // 'headers'  => [
                 //     'Content-Type' => '<Content-type header>'
@@ -38,11 +43,32 @@ class Verifier {
             $request = new Psr7\Request('POST', API_URL, $headers);
             $res = $client->sendAsync($request, $options)->wait();
 
-            echo json_encode($res->getBody()->getContents());
+            $resp = json_encode($res->getBody()->getContents());
+            echo $resp;
+            // if ($resp['errorCode'] == 404) {
+            //     http_response_code(404);
+            //     exit();
+            // }
+            // else if ($resp['status'] == TRUE) {
+            //     echo json_encode($resp);
+            //     exit();
+            // }
+            // else {
+            //     http_response_code(404);
+            // }
         }
 
         else if ($request->method() == "GET") {
-            VIEW::init("ocr.html");
+            $context = [];
+
+            $context['orgs'] = [
+                'ICSC',
+                'SP',
+                'PS',
+                'LLS'
+            ];
+
+            VIEW::init("ocr.html", $context);
         }
     }
 }

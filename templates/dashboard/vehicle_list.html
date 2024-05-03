@@ -43,27 +43,16 @@
                     <div class="col col-4">IS ACTIVE</div>
                     <div class="col col-5">ACTION</div>
                 </li>
+                <?php $i = 0; ?>
+                <?php foreach ($vehicle_list as $info) { ?>
                 <li class="table-row">
-                    <div class="col col-1" data-label="S.NO"># 01</div>
-                    <div class="col col-2" data-label="VEHICLE NUMBER">JK014423</div>
-                    <div class="col col-3" data-label="OWNER NAME">SHOAIB WANI</div>
+                    <div class="col col-1" data-label="S.NO"># <?= $i; ?> <?php $i+=1; ?></div>
+                    <div class="col col-2" data-label="VEHICLE NUMBER"><?= $info['number']; ?></div>
+                    <div class="col col-3" data-label="OWNER NAME"><?= $info['owner']; ?></div>
                     <div class="col col-4" data-label="IS ACTIVE">ACTIVE</div>
-                    <div class="col col-5" data-label="ACTION">delete</div>
+                    <div class="col col-5" data-label="ACTION"><a href="/vehicle_remove?org=<?= $info['orgId']; ?>&vehicle=<?= $info['number']; ?>">Delete</a></div>
                 </li> 
-                <li class="table-row">
-                    <div class="col col-1" data-label="S.NO"># 01</div>
-                    <div class="col col-2" data-label="VEHICLE NUMBER">JK014423</div>
-                    <div class="col col-3" data-label="OWNER NAME">SHOAIB WANI</div>
-                    <div class="col col-4" data-label="IS ACTIVE">ACTIVE</div>
-                    <div class="col col-5" data-label="ACTION">delete</div>
-                </li> 
-                <li class="table-row">
-                    <div class="col col-1" data-label="S.NO"># 01</div>
-                    <div class="col col-2" data-label="VEHICLE NUMBER">JK014423</div>
-                    <div class="col col-3" data-label="OWNER NAME">SHOAIB WANI</div>
-                    <div class="col col-4" data-label="IS ACTIVE">ACTIVE</div>
-                    <div class="col col-5" data-label="ACTION">delete</div>
-                </li> 
+                <?php } ?>
             </ul>
         </div>
         </div>
